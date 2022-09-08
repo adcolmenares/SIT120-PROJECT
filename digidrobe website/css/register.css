@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f8f9fe;
+    font-family: Gill Sans MT Condensed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-basis: 20%;
+}
+
+.registerForm{
+    background: #9cadce;
+    color:#f8f9fe;
+    font-size: 40px;
+    border-radius: 15px;
+    width: 100%;
+    height: 500px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm p {
+    font-size: 25px;
+}
