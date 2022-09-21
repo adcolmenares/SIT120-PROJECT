@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DigiDrobe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/login.css"/>
+        <link rel="stylesheet" href="css/nav.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    </head>
+
+    <body>
+        
+        <!--navigation bar / menu-->
+        <div class="navbar-wrapper">
+            <label class="logo">DigiDrobe</label>
+            <nav>
+                <input class="hidden" type="checkbox" id="navToggle">
+                <label class="nav-btn" for="navToggle">Menu</label>
+                
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li class="nav-link"><a href="home.html">Home</a></li>
+                        <li class="nav-link"><a href="upload.html">Upload</a></li>
+                        <li class="nav-link"><a href="wardrobe.html">Wardrobe</a></li>
+                        <li class="nav-link"><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+       
+        
+        <!--main content: login form-->
+        <div class="main-container">
+            
+            <div id="loginForm">
+
+                <div class="login-form">
+                <h2>Login with email</h2>
+                <br>
+                    <form class="form-group">
+
+                        <div class="email-field">
+                            <label for="email">Email:</label>
+                            <input v-model="email" 
+                                type="email" 
+                                placeholder="Email" required>
+                        </div>
+                            <br>
+                        <div class="password-field">
+                            <label for="password">Password:</label>
+                            <input v-model="password" 
+                                type="password" 
+                                placeholder="Password" required>
+                        </div>
+        
+                            <input type="button" value="Submit" class="btn btn-primary" @click="valLogin">
+                            <p> Don't have an account? <a href="register.html">Sign up now!</a></p>
+                    </form>
+
+                </div>
+
+            </div>
+            
+        </div> 
+
+    </body>
+    <script src="js/login.js"></script>   
+
+</html>

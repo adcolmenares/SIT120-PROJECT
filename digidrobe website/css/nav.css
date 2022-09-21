@@ -1,0 +1,129 @@
+/* root colours / font*/
+:root {
+    --primary: #d1cfe2;
+    --light: #f8f9fe;
+    --dark: #9cadce;
+	font-family: Gill Sans MT Condensed;
+}
+
+/* DigiDrobe logo */
+label.logo {
+    color:var(--dark);
+    font-size: 50px;
+    line-height: 80px;
+    padding: 0 25px;
+    font-weight: bold
+}
+
+/* Navigation bar */
+.navbar-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: auto;
+	width: 80%;
+	height: 80px;
+	padding: 0 25px;
+	z-index: 2;
+	background: var(--light);
+}
+
+.nav-links {
+	display: flex;
+	font-size: 30px;
+	list-style: none;
+    color: var(--dark);
+}
+
+/* Nav options */
+.nav-link a {
+    color: var(--dark);
+    font-size: 30px;
+    border-radius: 15px;
+	text-decoration: none;
+	padding: 5px 10px;
+	justify-content: space-evenly;
+	margin: 20px;
+}
+
+.nav-link a:hover {
+    background: var(--primary);
+    color:var(--light);
+    transition: .5s;
+}
+
+.hidden {
+	display: none;
+}
+
+/* For smaller screen */
+@media screen and (max-width: 768px) {
+	.nav-container {
+		position: fixed;
+		display: none;
+		overflow-y: auto;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		width: 280px;
+		height: 100%;
+		background: var(--light);
+	}
+
+	.nav-links {
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: 80px;
+		width: 100%;
+	}
+
+	.nav-link {
+		padding: 10px 25px;
+		margin: 0;
+		justify-content: space-evenly;
+	}
+
+	label.nav-btn {
+		background: var(--dark);
+		color: var(--light);
+		position: relative;
+		margin: 0;
+		font-size: 20px;
+		cursor: pointer;
+		z-index: 2;
+		padding: 10px;
+		border-radius: 10px;
+		text-align: center;
+	}
+
+	label.nav-btn:hover {
+		background: var(--primary);
+		color: var(--light);
+		transition: .5s;
+	}
+
+	/* navbar slide animation */
+	#navToggle:checked ~ .nav-container {
+		z-index: 1;
+		display: flex;
+		animation: nav-slide 0.3s ease;
+	}
+	@keyframes nav-slide {
+		0% {
+			transform: translateX(200px);
+		}
+    to {
+			transform: translateX(0);
+		}
+	}
+}
+
+/* References for navbar code 
+	1.) CodingNepal, 2019. How to Create Responsive Navigation Bar using HTML and CSS. 
+		[video] Available at: <https://www.youtube.com/watch?v=oLgtucwjVII&t=358s&ab_channel=CodingNepal> [Accessed 21 September 2022].
+	2.) Rex, J., n.d. Responsive Navbar - CSS / HTML ONLY. 
+		[online] Codepen. Available at: <https://codepen.io/rexdesigndk/pen/gJYExb> [Accessed 21 September 2022]./*
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DigiDrobe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/home.css"/>
+        <link rel="stylesheet" href="css/nav.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    </head>
+
+    <body onload="startTime()">
+        
+        <!--navigation bar / menu-->
+        <div class="navbar-wrapper">
+            <label class="logo">DigiDrobe</label>
+            <nav>
+                <input class="hidden" type="checkbox" id="navToggle">
+                <label class="nav-btn" for="navToggle">Menu</label>
+                
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li class="nav-link"><a href="home.html">Home</a></li>
+                        <li class="nav-link"><a href="upload.html">Upload</a></li>
+                        <li class="nav-link"><a href="wardrobe.html">Wardrobe</a></li>
+                        <li class="nav-link"><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--main content-->
+        <div class="main-container">
+
+            <!--greetings section-->
+            <div class="greetings-box">
+                <div id="greeting">
+                    <welcome-msg name="Alessandra"></welcome-msg>
+                </div>
+            </div>
+            
+            <!--weather section (used elfsight weather widget)-->
+            <br><br><br>
+            <div class="weatherBox">
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div class="elfsight-app-c197dfed-799d-4774-b03d-a5bd21d167f5"></div>
+            </div>
+
+            <!--share ID section-->
+            <div class="share-box">
+                <div id="idnumber">
+                    <div class="id-box">
+                    <h2>{{heading}}</h2>
+                    <share-id @applied="onidEntered"></share-id>
+                    <p v-if="idEntered">Valid ID entered!</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+
+    </body>
+    <script src="js/home.js"></script> 
+
+</html>

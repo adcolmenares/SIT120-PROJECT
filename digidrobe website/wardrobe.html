@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DigiDrobe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/wardrobe.css"/>
+        <link rel="stylesheet" href="css/nav.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+        
+    </head>
+
+    <body>
+        
+        <!--navigation bar / menu-->
+        <div class="navbar-wrapper">
+            <label class="logo">DigiDrobe</label>
+            <nav>
+                <input class="hidden" type="checkbox" id="navToggle">
+                <label class="nav-btn" for="navToggle">Menu</label>
+                
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li class="nav-link"><a href="home.html">Home</a></li>
+                        <li class="nav-link"><a href="upload.html">Upload</a></li>
+                        <li class="nav-link"><a href="wardrobe.html">Wardrobe</a></li>
+                        <li class="nav-link"><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <!--main content-->
+        <div class="main-container">
+
+            <!--Wardrobe images list-->
+            <div id="wardrobe">
+                <div class="header">
+                    <h1>Alessandra's wardrobe</h1>
+                </div>
+                
+                <!--Wardrobe filter buttons-->
+                <div class="category-nav">
+                    <h2>Filter by: </h2>
+                    <br>
+                    <label>
+                        <input type="radio" v-model="category" value=""> All
+                    </label>
+                    <label>
+                        <input type="radio" v-model="category" value="Dress"> Dress
+                    </label>
+                    <label>
+                        <input type="radio" v-model="category" value="Top"> Top
+                    </label>
+                    <label>
+                        <input type="radio" v-model="category" value="Bottom"> Bottom
+                    </label>
+                </div>
+            
+                <!--Wardrobe images with description-->
+                <transition-group appear tag="ul" class="category-list">
+                    <li v-for="image in filterByCategory" :key="image.index">
+                        <img :src="image.src" alt="">
+                        <div class="desc-box">
+                            <p>Clothing Name</p>
+                            <p>Description: </p>
+                            <textarea placeholder="Enter description here..."></textarea>
+                            
+                        </div>
+                    </li>
+                </transition-group>
+                
+            </div>
+            
+        </div>
+
+    </body>
+    <script src="js/wardrobe.js"></script>    
+
+</html>
